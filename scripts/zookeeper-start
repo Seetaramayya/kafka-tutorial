@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+#exit if subcommand fails
+set -e
+
+echo "Starting zookeeper..."
+# Start zookeeper which is required for kafka. Zookeeper is a service discovery,
+# and is used to identify all the kafka broker status
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties

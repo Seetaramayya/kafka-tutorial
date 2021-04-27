@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+#exit if subcommand fails
+set -e
+kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 3 --partitions 3 --topic test

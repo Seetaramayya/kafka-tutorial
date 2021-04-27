@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+#exit if subcommand fails
+set -e
+kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic test
