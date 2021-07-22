@@ -4,3 +4,6 @@ target/
 
 *.class
 *.bkp
+
+# kafka scripts are configured to use tmp folder here so ignoring
+tmp/
