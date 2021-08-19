@@ -25,14 +25,28 @@
 
   - Creates topic with 3 partitions and single replica
 
+    ```shell
+     kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3 --topic test
+     kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic test # zookeeper port is 2181
     ```
-    kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3 --topic test
-    ```
+    
+    __Note: `--zookeeper` flag is replaced with `--bootstrap-server`__
+
   - List topics
 
     ```
     kafka-topics.sh --list --bootstrap-server localhost:9092
     ```
+    
+  - Describe topic
+  
+  ```shell
+  seeta@nl1mcl-524932  master  kafka-topics.sh --zookeeper localhost:2181 --topic fist-topic --describe                                                                      ∞
+  Topic: fist-topic       PartitionCount: 3       ReplicationFactor: 3    Configs:
+  Topic: fist-topic       Partition: 0    Leader: 0       Replicas: 0,1,2 Isr: 2,1,0
+  Topic: fist-topic       Partition: 1    Leader: 1       Replicas: 1,2,0 Isr: 2,1,0
+  Topic: fist-topic       Partition: 2    Leader: 2       Replicas: 2,0,1 Isr: 2,0,1
+  ```
 
   - Send message to kafka cluster
 
