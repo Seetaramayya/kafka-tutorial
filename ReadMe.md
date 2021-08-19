@@ -12,3 +12,4 @@ Learning kafka, so documenting everything what I learned so far so that I can re
 
 - [Kafka Quick Start](https://kafka.apache.org/quickstart)
 - [Kafka Design](https://kafka.apache.org/documentation/#design)
+- [Kafka Java Example](https://docs.confluent.io/clients-kafka-java/current/overview.html#java-example-code)

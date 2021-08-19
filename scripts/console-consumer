@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+#exit if subcommand fails
+set -e
+
+[[ -z "$1" ]] && echo "Usage: $0 <topic-name>" && exit 1
+TOPIC_NAME=$1
+kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic $TOPIC_NAME --group my-console-consumer

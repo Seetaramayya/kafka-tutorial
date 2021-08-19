@@ -1,9 +1,11 @@
 target/
 .idea
 .bsp
+.bloop
 
 *.class
 *.bkp
+*.log
 
 # kafka scripts are configured to use tmp folder here so ignoring
 tmp/

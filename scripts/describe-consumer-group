@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+#exit if subcommand fails
+set -e
+
+[[ -z "$1" ]] && echo "Usage: $0 <consumer-group-name>" && exit 1
+CONSUMER_GRP_NAME=$1
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group $CONSUMER_GRP_NAME
