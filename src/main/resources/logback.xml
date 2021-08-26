@@ -7,7 +7,6 @@
             <fileNamePattern>${APP_PATH:-.}/kafka-tutorial-%d.log</fileNamePattern>
             <maxHistory>5</maxHistory>
         </rollingPolicy>
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
     </appender>
 
     <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
