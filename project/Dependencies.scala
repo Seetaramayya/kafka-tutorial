@@ -3,9 +3,12 @@ import sbt._
 object Dependencies {
   private val AkkaVersion = "2.6.15"
   private val ScalaTestVersion = "3.2.9"
+  private val kafkaVersion = "2.8.0"
 
   // https://github.com/apache/kafka
-  lazy val kafka = "org.apache.kafka" % "kafka-clients" % "2.8.0"
+  lazy val kafka = "org.apache.kafka" % "kafka-clients" % kafkaVersion
+
+  lazy val kafkaStreams = "org.apache.kafka" % "kafka-streams" % kafkaVersion
 
   // https://github.com/akka/akka
   lazy val akka = "com.typesafe.akka" %% "akka-actor" % AkkaVersion

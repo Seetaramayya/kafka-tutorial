@@ -14,7 +14,13 @@
   kafka-server-start.sh $KAFKA_HOME/config/server.properties
   ```
 
- - Scripts assumes that there are `server0.properties`, `server1.properties` and `server2.properties` exists in `$KAFKA_HOME/config/`
+- Scripts assumes that there are `server0.properties`, `server1.properties` and `server2.properties` exists in `$KAFKA_HOME/config/`
+
+- Reset offset to starting for given consumer group
+  ```shell
+     kafka-consumer-groups.sh --bootstrap-server localhost:9092 --reset-offsets --to-earliest --topic second-topic --group my-second-console-consumer
+  ```
+
 # Clean up
 
 - Clean up kafka with `~/bin/kafka-cleanup` ( which deletes all folders in `/tmp/kafka-logs-*` and `/tmp/zookeeper`)

@@ -10,6 +10,7 @@ lazy val root = (project in file("."))
     name := "kafka-tutorial",
     libraryDependencies ++= Seq(
       kafka,
+      kafkaStreams,
       akka,
       akkaStream,
       logback,
