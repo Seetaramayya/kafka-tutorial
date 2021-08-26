@@ -64,6 +64,23 @@
 
     ```
     kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+    
+    kafka-console-consumer.sh --bootstrap-server localhost:9092 \
+    --topic word-count-out \
+    --from-beginning \
+    --formatter kafka.tools.DefaultMessageFormatter \
+    --property print.key=true \
+    --property print.value=true \
+    --property key-deserializer=org.apache.kafka.common.serialization.StringDeserializer \
+    --property value-deserializer=org.apache.kafka.common.serialization.LongDeserializer
+    
+    kafka-console-consumer.sh --bootstrap-server localhost:9092 \
+    --topic word-count-out \
+    --from-beginning \
+    --property print.key=true \
+    --property print.value=true \
+    --property key-deserializer=org.apache.kafka.common.serialization.StringDeserializer \
+    --property value-deserializer=org.apache.kafka.common.serialization.LongDeserializer
     ```
 
   - Consume message from the kafka cluster in single consumer group using console which shares the work load,
@@ -77,3 +94,8 @@
     ```
     kafka-dump-log.sh --files /tmp/kafka-logs-0/test-1/00000000000000000000.log
     ```
+
+
+# Resources 
+
+- [Kafka console consumer examples](https://datacadamia.com/dit/kafka/kafka-console-consumer)
